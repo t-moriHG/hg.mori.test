@@ -1,4 +1,4 @@
-var width = 20,height = 20;
+var width = 75,height = 75;
 var canvas = document.getElementById("world");
 var ctx = canvas.getContext("2d");
 
@@ -22,13 +22,17 @@ img.onload = function() {
     }
   }
   
-  //ary.shuffle();
-  //console.log(ary);
+  console.log(ary);
+  
+  ary.shuffle();
 
   for(var i = 0;i < len;i++){
     for(var j = 0;j < hei;j++){
       cnt--;
+      
       var x = ary[cnt][0],y = ary[cnt][1];
+      console.log("x=" + x);
+      console.log("y=" + y);
       ctx.drawImage(img, width * x, height * y, width, height, width * i, height * j, width, height);
     }
   }
